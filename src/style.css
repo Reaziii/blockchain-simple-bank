@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+.nav {
+    height: 40px;
+    background-color: black;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+}
+.nav .title {
+    font-weight: 700;
+    color: white;
+    font-size: 18px;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 100px;
+}
+
+.address {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 12px;
+}
+
+.create-account {
+    display: flex;
+    flex-direction: column;
+}
+.my-transaction {
+    width: 800px;
+    margin-top: 100px;
+}
+
+.my-transaction input {
+    width: 330px;
+    border: 1px solid rgba(128, 128, 128, 0.451);
+    border-radius: 3px;
+    outline: none;
+    box-sizing: border-box;
+    padding: 5px 5px;
+    font-size: 13px;
+}

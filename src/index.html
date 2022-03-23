@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>web3</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.1/web3.min.js"
+      integrity="sha512-GKw4QT/RccGJIwQxY3MhyiQ5pHrhQ8SuKFEafV+WcpOvtz7iYFQuQGFCvmGlHLctJTe8KrWU1FqvF7VOkEAJtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.6.1/ethers.umd.min.js"
+      integrity="sha512-Wk8LwrCdvLi66bszTQf/sUJDbbWamqm6Mtrti6870lVMuCFwmP0CMdwZhbBHUM9+V+nE3OMRSlsPU1oKC34j1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div class="nav">
+      <h1 class="title">BLOCKCHAIN | SIMPLE BANK</h1>
+      <div id="address" class="address">
+        <button
+          style="font-size: 10px; border: none; outline: none"
+          class="btn btn-danger"
+          onclick="connectWallet()"
+        >
+          Connect Wallet
+        </button>
+      </div>
+    </div>
+
+    <div id="create-account" class="create-account">
+      <h1 style="font-size: 16px">Create a account</h1>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">@</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Username"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          id="name"
+        />
+      </div>
+      <button
+        onclick="createAccount()"
+        type="button"
+        class="btn btn-outline-success"
+      >
+        Submit
+      </button>
+    </div>
+    <div style="display: none" id="upay-app" class="upay-app">
+      <div style="display: flex" class="name-section">
+        <p style="margin-right: 10px">name :</p>
+        <div id="my-name"></div>
+      </div>
+      <div style="display: flex" class="balance-section">
+        <p style="margin-right: 10px">Balance :</p>
+        <div id="my-balance"></div>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input
+          type="number"
+          class="form-control"
+          aria-label="Amount (to the nearest dollar)"
+          placeholder="balance"
+          id="send-balance"
+        />
+      </div>
+      <div style="width: 500px" class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Recipient's account number"
+          aria-label="Recipient's account number"
+          aria-describedby="basic-addon2"
+          id="account-no"
+        />
+        <button
+          onclick="sendBalance()"
+          class="input-group-text"
+          id="basic-addon2"
+        >
+          transfer
+        </button>
+      </div>
+    </div>
+
+    <div style="display: none;" id="my-transaction" class="my-transaction">
+      <h1
+        style="
+          font-size: 18px;
+          margin-bottom: 10px;
+          width: 100%;
+          text-align: center;
+        "
+      >
+        My transactions
+      </h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Amount</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
